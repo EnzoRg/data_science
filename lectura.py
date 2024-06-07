@@ -19,6 +19,7 @@ dias_raw = value_dicts['D3']
 fecha_data_raw = value_dicts['D4']
 horarios_raw = value_dicts['D5']
 
+
 # Se crea un diccionario para mapear los días de la semana
 # Quizas cuando se implemente ML es mejor dejarlo como un float 
 dias_semana = {
@@ -45,6 +46,7 @@ for x in dm0:
     # Día de la semana
     dia_numero = datetime.strptime(fecha, '%d/%m/%Y').weekday()
     dia_semana = dias_semana[dia_numero]
+    #dia_semana = dias_semana[c_data[2]]
 
     # Cantidad de vehículos
     cantidad_vehiculos = c_data[1]
@@ -52,15 +54,22 @@ for x in dm0:
     # Turno 
     turno = turno_raw.lower()
 
-    filas.append([fecha, cantidad_vehiculos, turno, dia_semana])
+    # Horario
+    if len(c_data) > 3:
+        horario = horarios_raw[c_data[3]]
+    else:
+        horario = horario
+
+    # Cantidad de vehículos
+    cantidad_vehiculos = c_data[1]
+    
+    filas.append([fecha, turno, dia_semana, horario, cantidad_vehiculos])
 
 # Se crea un nuevo archivo .csv
 with open('datos.csv', 'w', newline='', encoding='utf-8') as file:
     writer = csv.writer(file)
-    columnas = ['fecha', 'cantidad', 'turno', 'dia_semana']
+    columnas = ['fecha', 'turno', 'dia_semana', 'horario', 'cantidad']
     
     # Se escriben el nombre las columnas y filas
     writer.writerow(columnas)
     writer.writerows(filas)
-
-    #Prueba
