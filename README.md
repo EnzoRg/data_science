@@ -17,5 +17,5 @@ In this repository, I will upload the notebooks corresponding to [_Diplomatura e
 ## 03: _Introducción al Aprendizaje Automático_ (Introduction to Machine Learning) 
 
 ### Laboratories:
-* [Part 1]
+* [Part 1](https://github.com/EnzoRg/data_science/blob/main/03_lab_1.ipynb)
 * Part 2
