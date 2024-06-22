@@ -13,3 +13,9 @@ In this repository, I will upload the notebooks corresponding to [_Diplomatura e
 ### Laboratories 
 * Part 1
 * Part 2
+
+## 03: _Introducción al Aprendizaje Automátco_ (Introduction to Machine Learning) 
+
+### Laboratories:
+* Part 1
+* Part 2
